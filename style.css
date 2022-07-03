@@ -1,0 +1,19 @@
+#clr,
+.clr{
+    color: rgb(8, 8, 202);
+}
+#body{
+    background:linear-gradient(45deg, #f5ac, yellow);
+} 
+footer{
+    background-color: rgb(18, 18, 71);
+}
+#hv:hover{
+color: #f5ad;
+}
+@media (max-width:430px){
+    footer .ftd{
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+}
