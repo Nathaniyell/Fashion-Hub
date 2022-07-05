@@ -1,6 +1,6 @@
 #clr,
 .clr{
-    color: rgb(8, 8, 202);
+    color: rgb(46, 45, 45);
 }
 #body{
     background:linear-gradient(45deg, #f5ac, yellow);
@@ -14,6 +14,7 @@ footer{
 #hv:hover{
 color: #f5ad;
 }
+
 @media (max-width:430px){
     footer .ftd{
         flex-direction: column;
