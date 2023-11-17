@@ -4,6 +4,7 @@
 }
 #body{
     background:linear-gradient(45deg, #f5ac, yellow);
+    margin-top: 60px;
 }
 img{
     object-fit: fill;
