@@ -16,6 +16,15 @@ footer{
 color: #f5ad;
 }
 
+.newCarousel{
+    width: 90%;
+}
+
+@media (min-width:768px){
+    .newCarousel{
+        width: 25%;
+    }
+}
 @media (max-width:430px){
     footer .ftd{
         flex-direction: column;
