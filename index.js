@@ -8,6 +8,8 @@ function displayCart(a) {
   if (cart.length === 0) {
     cartItems.innerHTML = "Your Cart is empty";
   } else {
-    cartItems.innerHTML = `<div></div>`;
+    cartItems.innerHTML = `<div>
+    
+    </div>`;
   }
 }
