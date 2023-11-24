@@ -1,6 +1,6 @@
 // const cart = document.getElementById("");
 const cartItems = document.getElementById("cartItem");
-const addToCartBtn = document.querySelectorAll("addToCart")
+const addToCartBtn = document.querySelectorAll("#addToCart")
 let cart = [];
 addToCartBtn.forEach(btn=>{
   btn.addEventListener('click',()=>{
