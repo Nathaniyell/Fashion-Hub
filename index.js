@@ -1,7 +1,7 @@
 // const cart = document.getElementById("");
 const price = document.getElementById("clothPrice");
 const title = document.getElementById("clothTitle");
-const cartItems = document.getElementsById("cartItem");
+const cartItems = document.getElementById("cartItem");
 const addToCartBtn = document.getElementById("addToCart")
 let cart = [];
 function addToCart(){
