@@ -5,7 +5,8 @@ const cartItems = document.getElementsById("cartItem");
 const addToCartBtn = document.getElementById("addToCart")
 let cart = [];
 function addToCart(){
-  cart.push()
+  // cart.push()
+  displayCart()
 }
 
 function displayCart(a) {
