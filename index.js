@@ -14,8 +14,9 @@ function displayCart(a) {
     cartItems.innerHTML = "Your Cart is empty";
   } else {
     addToCartBtn.addEventListener("click",()=>{
-
+      i++
     })
+    console.log(addToCartBtn.parentNode)
     cartItems.innerHTML = `<div>
     
     </div>`;
