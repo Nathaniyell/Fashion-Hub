@@ -12,6 +12,8 @@ addToCartBtn.forEach(btn=>{
   })
 })
 
+
+
 function displayCart(){
   if (cart.length===0){
     cartItems.innerHTML ="Your cart is empty"
