@@ -3,11 +3,11 @@ const cartItems = document.getElementById("cartItem");
 const addToCartBtn = document.getElementById("addToCart")
 let cart = [];
 addToCartBtn.addEventListener("click",()=>{
-  const grandParent = addToCartBtn.parentElement.parentElement
-  const title = grandParent.querySelector("h1").textContent
-  const price = grandParent.querySelector("p").textContent
+  const parent = addToCartBtn.parentElement
+  const title = parent.parentElement.querySelector("h1").textContent
+  const price = parent.querySelector("#clothPrice").textContent
  
-
+console.log(price, title);
 
 })
 // function addToCart(){
