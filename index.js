@@ -8,7 +8,15 @@ addToCartBtn.addEventListener("click",()=>{
   const price = parent.querySelector("#clothPrice").textContent
  cart.push({...cart,price, title})
 console.log(cart);
-
+if (cart.length===0){
+  cartItems.innerHTML ="Your cart is empty"
+}else{
+  cartItems.innerHTML= `<div class="d-flex w-100 justify-content-between align-items-center">
+  <h4>${title}</h4>
+  <p>${price}</p>
+  </div>
+  `
+}
 })
 // function addToCart(){
 //    cart.push()
