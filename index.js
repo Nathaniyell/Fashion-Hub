@@ -6,8 +6,8 @@ addToCartBtn.addEventListener("click",()=>{
   const parent = addToCartBtn.parentElement
   const title = parent.parentElement.querySelector("h1").textContent
   const price = parent.querySelector("#clothPrice").textContent
- 
-console.log(price, title);
+ cart.push({...cart,price, title})
+console.log(cart);
 
 })
 // function addToCart(){
