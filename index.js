@@ -11,11 +11,18 @@ console.log(cart);
 if (cart.length===0){
   cartItems.innerHTML ="Your cart is empty"
 }else{
-  cartItems.innerHTML= `<div class="d-flex w-100 justify-content-between align-items-center">
-  <h4 class="fs-6">${title}</h4>
-  <p>${price}</p>
-  </div>
-  `
+
+  cartItems.innerHTML= cart.map(item=>{
+    return(
+      `<div class="d-flex w-100 justify-content-between align-items-center">
+      <h4 class="fs-5">${item.title}</h4>
+      <p class="fs-5">${item.price}</p>
+      </div>
+      `
+    )
+  })
+  
+
 }
 })
 // function addToCart(){
