@@ -46,8 +46,8 @@ function displayCart() {
       let {title,price} = item
       return (
         `<div class="d-flex w-100 justify-content-between align-items-center">
-          <h4 class="fs-5">${item.title}</h4>
-          <p class="fs-5">${item.price}</p>
+          <h4 class="fs-5">${title}</h4>
+          <p class="fs-5">${price}</p>
           <button type="button" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
         </div>`
       );
