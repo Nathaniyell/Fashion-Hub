@@ -41,9 +41,12 @@ function displayCart() {
     cartItems.innerHTML = "Your cart is empty";
     cartTotal.innerHTML="N "+0+" .00"
   } else {
+    let total = 0
     // If there are items in the cart, display each item
     cartItems.innerHTML = cart.map((item, index) => {
       let {title,price} = item
+      total +=parseFloat(price)
+      cartTotal.innerHTML = "N "+total+" .00"
       return (
         `<div class="d-flex w-100 justify-content-between align-items-center">
           <h4 class="fs-5">${title}</h4>
