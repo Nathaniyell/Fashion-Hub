@@ -8,7 +8,7 @@
 .cart__itself{
     position: absolute;
     top: 90px;
-    right: 0;
+    right: 10px;
     width: 35%;
     background-color: #f3f3f2;
     padding: 15px;
@@ -47,5 +47,11 @@ color: #f5ad;
     footer .ftd{
         flex-direction: column;
         margin-bottom: 10px;
+    }
+    .cart__itself{
+        width: 60%;
+        top: 270px;
+        overflow-y: scroll;
+    
     }
 }
