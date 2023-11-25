@@ -1,6 +1,7 @@
 const cartItems = document.getElementById("cartItem");
 const addToCartBtn = document.querySelectorAll("#addToCart");
 const cartCount = document.getElementById("count")
+const cartTotal = document.getElementById("total")
 let cart = [];
 
 addToCartBtn.forEach(btn => {
@@ -38,6 +39,7 @@ function displayCart() {
   if (cart.length === 0) {
     // If the cart is empty, display a message
     cartItems.innerHTML = "Your cart is empty";
+    cartTotal.innerHTML="0.00"
   } else {
     // If there are items in the cart, display each item
     cartItems.innerHTML = cart.map((item, index) => {
