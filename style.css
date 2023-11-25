@@ -2,6 +2,19 @@
 .clr{
     color: rgb(46, 45, 45);
 }
+.nav__Cart{
+    background-color: #122543;
+}
+.cart__itself{
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 35%;
+    background-color: #f3f3f2;
+    padding: 15px;
+    transform: translateX(600px);
+    transition: all ease-in-out;
+}
 #body{
     background:linear-gradient(45deg, #f5ac, yellow);
     margin-top: 60px;
