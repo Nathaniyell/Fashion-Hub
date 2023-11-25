@@ -21,6 +21,15 @@ addToCartBtn.forEach(btn => {
     displayCart();
   }
 
+// filter: This method creates a new array by filtering out elements that don't satisfy a specified condition. It doesn't modify the original array but produces a new array with the desired elements. This can be useful if you want to keep the original array unchanged or if you need to create a new array for some other purpose.
+
+
+  // function deleteItem(index) {
+  //   cart = cart.filter((item, i) => i !== index);
+  //   displayCart();
+  // }
+
+// If you prefer to keep the original array unchanged and create a new array with the desired elements, `filter` is a good choice. If you want to modify the original array in place, then `splice` might be more appropriate. Consider the specific requirements and behavior you need in your application.
 
 
 function displayCart() {
