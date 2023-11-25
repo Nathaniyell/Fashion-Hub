@@ -16,6 +16,7 @@ addToCartBtn.forEach(btn => {
     const price = parent.querySelector("#clothPrice").textContent;
     cart.push({ price, title });
     console.log(cart);
+    console.log("Your Item has been added to cart")
 
     // Display the updated cart immediately after adding an item
     displayCart();
