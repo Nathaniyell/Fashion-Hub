@@ -48,7 +48,7 @@ function displayCart() {
       total +=parseFloat(price)
       cartTotal.innerHTML = "N "+total+" .00"
       return (
-        `<div class="d-flex w-100 justify-content-between align-items-center bg-white p-2 my-2">
+        `<div class="d-flex w-100 justify-content-between align-items-center bg-white p-2 my-2 rounded">
           <h4 class="fs-6 text-center">${title}</h4>
           <h4 class="fs-6 text-center">${price}</h4>
           <button type="button" class="d-flex align-items-center justify-content-between border-0 btn btn-sm btn-danger" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
