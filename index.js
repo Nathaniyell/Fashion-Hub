@@ -2,7 +2,12 @@ const cartItems = document.getElementById("cartItem");
 const addToCartBtn = document.querySelectorAll("#addToCart");
 const cartCount = document.getElementById("count")
 const cartTotal = document.getElementById("total")
+const cartIcon = document.querySelector(".nav__Cart")
 let cart = [];
+
+cartIcon.addEventListener("click", ()=>{
+  cartItems.parentElement.classList.toggle("show-cart")
+})
 
 addToCartBtn.forEach(btn => {
   btn.addEventListener('click', () => {

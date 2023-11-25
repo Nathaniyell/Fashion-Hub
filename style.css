@@ -13,7 +13,10 @@
     background-color: #f3f3f2;
     padding: 15px;
     transform: translateX(600px);
-    transition: all ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+.cart__itself.show-cart{
+    transform: translateX(0);
 }
 #body{
     background:linear-gradient(45deg, #f5ac, yellow);
