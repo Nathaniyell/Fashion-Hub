@@ -15,6 +15,10 @@ addToCartBtn.forEach(btn => {
   });
 });
 
+function deleteItem(title){
+cart.filter(item=>item.title !==title)
+}
+
 function displayCart() {
   if (cart.length === 0) {
     // If the cart is empty, display a message
@@ -26,7 +30,7 @@ function displayCart() {
         `<div class="d-flex w-100 justify-content-between align-items-center">
           <h4 class="fs-5">${item.title}</h4>
           <p class="fs-5">${item.price}</p>
-          <button><i class="fa-solid fa-trash"></i></button>
+          <button type="button" onclick="deleteItem()"><i class="fa-solid fa-trash"></i></button>
         </div>`
       );
     }).join(''); // Use join('') to convert the array of strings to a single string
