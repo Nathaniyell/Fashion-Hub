@@ -15,9 +15,7 @@ addToCartBtn.forEach(btn => {
   });
 });
 
-// `splice`: This method modifies the original array by adding or removing elements. It's useful when you want to modify the existing array in place. The `splice` method changes the contents of an array by removing or replacing existing elements and/or adding new elements.
-
-
+// splice: This method modifies the original array by adding or removing elements. It's useful when you want to modify the existing array in place. The `splice` method changes the contents of an array by removing or replacing existing elements and/or adding new elements.
   function deleteItem(index) {
     cart.splice(index, 1);
     displayCart();
