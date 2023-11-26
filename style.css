@@ -3,12 +3,17 @@
     color: rgb(46, 45, 45);
 }
 .nav__Cart{
+    padding: 5px 8px;
     background-color: #122543;
 }
+/* .nav__list{
+    position: relative;
+    right: -250px;
+} */
 .cart__itself{
     position: absolute;
     top: 90px;
-    right: 10px;
+    right: 5px;
     width: 35%;
     background-color: #f3f3f2;
     padding: 15px;
