@@ -3,10 +3,8 @@ const addToCartBtn = document.querySelectorAll("#addToCart");
 const cartCountElement = document.getElementById("count");
 const cartTotal = document.getElementById("total");
 const cartIcon = document.querySelector(".nav__Cart");
-const StoredItems = JSON.parse(localStorage.getItem("cartItems")) || []; // Ensure StoredItems is initialized as an array
-
-let cart = StoredItems; // Initialize cart with stored items
-let cartCount = StoredItems.length
+let cart = JSON.parse(localStorage.getItem("cartItems")) || []; // Ensure cart is initialized from localStorage
+let cartCount = cart.reduce((total, item) => total + item.quantity, 0);  // Calculate total quantity dynamically
 
 cartIcon.addEventListener("click", () => {
   cartItems.parentElement.classList.toggle("show-cart");
@@ -87,3 +85,7 @@ function displayCart() {
     cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
+
+// Call displayCart to show the cart when the page loads
+displayCart();
+console.log("StoredItems on page load:", cart);
