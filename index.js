@@ -3,7 +3,6 @@ const addToCartBtn = document.querySelectorAll("#addToCart");
 const cartCount = document.getElementById("count")
 const cartTotal = document.getElementById("total")
 const cartIcon = document.querySelector(".nav__Cart")
-
 let cart = [];
 
 cartIcon.addEventListener("click", ()=>{
@@ -15,8 +14,8 @@ addToCartBtn.forEach(btn => {
     const parent = btn.parentElement;
     const title = parent.parentElement.querySelector("h1").textContent;
     const price = parent.querySelector("#clothPrice").textContent;
-    cart.push({price, title });
-    localStorage.setItem("cartItems", JSON.stringify(cart))
+    cart.push({price:price, title });
+  
     console.log(cart);
     console.log("Your Item has been added to cart")
 
@@ -51,8 +50,7 @@ function displayCart() {
   } else {
     let total = 0
     // If there are items in the cart, display each item
-    
-    cartItems.innerHTML = StoredItems.map((item, index) => {
+    cartItems.innerHTML = cart.map((item, index) => {
       let {title,price} = item
       total +=parseFloat(price)
       cartTotal.innerHTML = "N "+total+" .00"
