@@ -84,6 +84,6 @@ function displayCart() {
           </div>`;
       })
       .join('');
-    cartTotal.innerHTML = `N ${total.toFixed(2)} .00`;
+    cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
