@@ -4,7 +4,7 @@ const cartCountElement = document.getElementById("count");
 const cartTotal = document.getElementById("total");
 const cartIcon = document.querySelector(".nav__Cart");
 let cart = JSON.parse(localStorage.getItem("cartItems")) || []; // Ensure cart is initialized from localStorage
-let cartCount = cart.reduce((total, item) => total + item.quantity, 0);  // Calculate total quantity dynamically
+let cartCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total quantity dynamically
 
 cartIcon.addEventListener("click", () => {
   cartItems.parentElement.classList.toggle("show-cart");
@@ -22,7 +22,8 @@ addToCartBtn.forEach((btn) => {
     if (existingItemIndex !== -1) {
       // If the item exists, update the quantity and total price
       cart[existingItemIndex].quantity += 1;
-      cart[existingItemIndex].totalPrice = cart[existingItemIndex].quantity * price;
+      cart[existingItemIndex].totalPrice =
+        cart[existingItemIndex].quantity * price;
     } else {
       // If the item doesn't exist, add it to the cart
       cart.push({ title, price, quantity: 1, totalPrice: price });
@@ -79,12 +80,22 @@ function displayCart() {
             <h4 class="fs-6 text-center">${title}</h4>
             <h4 class="fs-6 text-center">${quantity}</h4>
             <button type="button" class="d-flex align-items-center justify-content-between border-0 btn btn-sm btn-danger" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
-          </div>`;
+          </div>
+                  `;
       })
-      .join('');
+      .join("");
     cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
+cart.length > 0 &&
+  (() => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className =
+      "btn border-0 bg-success p-1 text-light fw-bold my-2 w-100";
+    button.textContent = "Checkout";
+    cartItems.parentElement.appendChild(button);
+  })();
 
 // Call displayCart to show the cart when the page loads
 displayCart();
