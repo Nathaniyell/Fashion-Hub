@@ -87,15 +87,15 @@ function displayCart() {
     cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
-cart.length > 0 &&
-  (() => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className =
-      "btn border-0 bg-success p-1 text-light fw-bold my-2 w-100";
-    button.textContent = "Checkout";
-    cartItems.parentElement.appendChild(button);
-  })();
+// cart.length > 0 &&
+//   (() => {
+//     const button = document.createElement("button");
+//     button.type = "button";
+//     button.className =
+//       "btn border-0 bg-success p-1 text-light fw-bold my-2 w-100";
+//     button.textContent = "Checkout";
+//     cartItems.parentElement.appendChild(button);
+//   })();
 
 // Call displayCart to show the cart when the page loads
 displayCart();
