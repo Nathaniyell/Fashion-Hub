@@ -102,16 +102,16 @@ async function fetchFootWears() {
 
   try {
     const response = await fetch(url, options);
-    const result = await response.text();
+    const result = await response.json();
     console.log(result);
+    footWears.push(result)
   } catch (error) {
     console.error(error);
   }
-  footWears.push(result);
+
 }
-
 fetchFootWears();
-
+console.log(footWears)
 footWearsContainer.innerHTML = footWears ? footWears.map((shoe) => {
   const { name, price, image, description } = shoe;
 
