@@ -87,16 +87,29 @@ function displayCart() {
     cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
-// cart.length > 0 &&
-//   (() => {
-//     const button = document.createElement("button");
-//     button.type = "button";
-//     button.className =
-//       "btn border-0 bg-success p-1 text-light fw-bold my-2 w-100";
-//     button.textContent = "Checkout";
-//     cartItems.parentElement.appendChild(button);
-//   })();
+const footWearsContainer = document.getElementById("footwears")
 
+async function fetchFootWears(){
+const url = 'https://shoes-collections.p.rapidapi.com/shoes/3';
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea',
+    'X-RapidAPI-Host': 'shoes-collections.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
+}
+
+fetchFootWears()
 // Call displayCart to show the cart when the page loads
 displayCart();
 console.log("StoredItems on page load:", cart);
