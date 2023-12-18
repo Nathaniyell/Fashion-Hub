@@ -88,6 +88,7 @@ function displayCart() {
   }
 }
 const footWearsContainer = document.getElementById("footwears")
+const footWears = []
 
 async function fetchFootWears(){
 const url = 'https://shoes-collections.p.rapidapi.com/shoes/3';
@@ -106,7 +107,7 @@ try {
 } catch (error) {
 	console.error(error);
 }
-
+return result
 }
 
 fetchFootWears()
