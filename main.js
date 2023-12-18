@@ -109,7 +109,10 @@ async function fetchFootWears() {
   }
   footWears.push(result);
 }
-footWearsContainer.innerHTML = footWears?.map((shoe) => {
+
+fetchFootWears();
+
+footWearsContainer.innerHTML = footWears ? footWears.map((shoe) => {
   const { name, price, image, description } = shoe;
 
   return `
@@ -128,9 +131,8 @@ footWearsContainer.innerHTML = footWears?.map((shoe) => {
                   </div>
   
   `;
-}).join("")
+}).join("") : `<div class="text-center fw-normal fs-5 my-5">Coming soon...</div>`
 
-fetchFootWears();
 // Call displayCart to show the cart when the page loads
 displayCart();
 console.log("StoredItems on page load:", cart);
