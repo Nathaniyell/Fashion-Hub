@@ -91,29 +91,32 @@ const footWearsContainer = document.getElementById("footwears");
 const footWears = [];
 
 async function fetchFootWears() {
-  const url = "https://shoes-collections.p.rapidapi.com/shoes/3";
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea",
-      "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
-    },
-  };
+  // const url = "https://shoes-collections.p.rapidapi.com/shoes/3";
+  const url = "https://api.escuelajs.co/api/v1/categories/"
+  // const options = {
+  //   method: "GET",
+  //   headers: {
+  //     "X-RapidAPI-Key": "605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea",
+  //     "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
+  //   },
+  // };
 
   try {
-    const response = await fetch(url, options);
+    // const response = await fetch(url, options);
+    const response = await fetch(url)
     const result = await response.json();
     console.log(result);
-    footWears.push(result)
+    footWears.push(result.shoes)
   } catch (error) {
     console.error(error);
   }
 
 }
-fetchFootWears();
+window.addEventListener("DOMContentLoaded", fetchFootWears) 
 console.log(footWears)
 footWearsContainer.innerHTML = footWears ? footWears.map((shoe) => {
-  const { name, price, image, description } = shoe;
+  // const { name, price, image, description } = shoe;
+  const { name, image} = shoe;
 
   return `
   <div class="col-md-6 mb-5 mx-3 border-bottom border-dark pb-3" style="width: 18rem;">
