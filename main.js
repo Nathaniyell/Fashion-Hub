@@ -87,30 +87,50 @@ function displayCart() {
     cartTotal.innerHTML = `N ${total.toFixed(2)}`;
   }
 }
-const footWearsContainer = document.getElementById("footwears")
-const footWears = []
+const footWearsContainer = document.getElementById("footwears");
+const footWears = [];
 
-async function fetchFootWears(){
-const url = 'https://shoes-collections.p.rapidapi.com/shoes/3';
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea',
-    'X-RapidAPI-Host': 'shoes-collections.p.rapidapi.com'
+async function fetchFootWears() {
+  const url = "https://shoes-collections.p.rapidapi.com/shoes/3";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea",
+      "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.text();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
   }
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+  footWears.push(result);
 }
-return result
-}
+footWearsContainer.innerHTML = footWears?.map((shoe) => {
+  const { name, price, image, description } = shoe;
 
-fetchFootWears()
+  return `
+  <div class="col-md-6 mb-5 mx-3 border-bottom border-dark pb-3" style="width: 18rem;">
+                  <img class="rounded img-fluid card-img-top" src=${image}  alt=${name}>
+                  <div class="card-body">
+                      <h1 class="fw-semibold fs-5 mt-3">${name}</h1>
+                      <p class="card-text">${description}</p>
+                      
+                      <div class="card-body d-flex justify-content-between align-items-center w-100 mt-3">
+                          <p class="fw-bold">N<span id="clothPrice">${price}</span></p>
+                        
+                          <button id="addToCart" class=" btn-sm btn border-primary rounded-circle border-opacity-50 text-primary"><i class="fa-solid fa-cart-shopping"></i></button>
+  
+                      </div>
+                  </div>
+  
+  `;
+}).join("")
+
+fetchFootWears();
 // Call displayCart to show the cart when the page loads
 displayCart();
 console.log("StoredItems on page load:", cart);
