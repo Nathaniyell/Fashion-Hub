@@ -1,4 +1,3 @@
-const SneaksAPI = require('sneaks-api');
 const cartItems = document.getElementById("cartItem");
 const addToCartBtn = document.querySelectorAll("#addToCart");
 const cartCountElement = document.getElementById("count");
@@ -90,36 +89,30 @@ function displayCart() {
 }
 const footWearsContainer = document.getElementById("footwears");
 const footWears = [];
-const SneaksAPI = require('sneaks-api');
-const sneaks = new SneaksAPI();
 
-//getProducts(keyword, limit, callback) takes in a keyword and limit and returns a product array 
-sneaks.getProducts("Yeezy Cinder", 10, function(err, products){
-    console.log(products)
-})
-// async function fetchFootWears() {
-//   // const url = "https://shoes-collections.p.rapidapi.com/shoes/3";
-//   const url = "https://api.storerestapi.com/categories/bags-and-shoes"
-//   // const options = {
-//   //   method: "GET",
-//   //   headers: {
-//   //     "X-RapidAPI-Key": "605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea",
-//   //     "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
-//   //   },
-//   // };
+async function fetchFootWears() {
+  // const url = "https://shoes-collections.p.rapidapi.com/shoes/3";
+  const url = "https://api.storerestapi.com/categories/bags-and-shoes"
+  // const options = {
+  //   method: "GET",
+  //   headers: {
+  //     "X-RapidAPI-Key": "605ea90a1fmshad0b312f87476edp1e757cjsn075d201026ea",
+  //     "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
+  //   },
+  // };
 
-//   try {
-//     // const response = await fetch(url, options);
-//     const response = await fetch(url)
-//     const result = await response.json();
-//     console.log(result);
-//     footWears.push(result.shoes)
-//   } catch (error) {
-//     console.error(error);
-//   }
+  try {
+    // const response = await fetch(url, options);
+    const response = await fetch(url)
+    const result = await response.json();
+    console.log(result);
+    footWears.push(result.shoes)
+  } catch (error) {
+    console.error(error);
+  }
 
-// }
-// window.addEventListener("DOMContentLoaded", fetchFootWears) 
+}
+window.addEventListener("DOMContentLoaded", fetchFootWears) 
 console.log(footWears)
 footWearsContainer.innerHTML = footWears ? footWears.map((shoe) => {
   // const { name, price, image, description } = shoe;
